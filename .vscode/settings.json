@@ -1,0 +1,10 @@
+{
+    "cmake.cmakePath": "cmake",
+    "cmake.preferredGenerators": [
+        "Ninja"
+    ],
+    "cmake.environment": {
+        "GCC_TOOLCHAIN_ROOT": "/Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/arm-none-eabi",
+        "CLANG_GCC_CMSIS_COMPILER": "/opt/ST/STM32CubeCLT_1.19.0/st-arm-clang"
+    },
+}
