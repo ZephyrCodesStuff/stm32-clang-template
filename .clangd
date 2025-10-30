@@ -1,13 +1,12 @@
 CompileFlags:
   Add:
-    - "-ferror-limit=0"
-    - "-Wno-implicit-int"
-  # Fix some unknown STARM-specific flags by removing them.
+    - '-ferror-limit=0'
+    - '-Wno-implicit-int'
   Remove:
-    - "-mcpu=*"
-    - "-mfpu=*"
-    - "-mfloat-abi=*"
-    - "--multi-lib-config=*"
+    - '-mcpu=*'
+    - '-mfpu=*'
+    - '-mfloat-abi=*'
+    - '--multi-lib-config=*'
   CompilationDatabase: build/Debug
 Diagnostics:
   Suppress:
@@ -15,7 +14,3 @@ Diagnostics:
     - unknown_typename
     - unknown_typename_suggest
     - typename_requires_specqual
-
-# Let clangd invoke the cross toolchain driver to discover target/flags.
-If:
-  PathMatch: ".*"

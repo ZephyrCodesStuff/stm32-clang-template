@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/Debug/rtos-sandbox.elf",
+            "name": "Debug with QEMU",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "qemu",
+            "configFiles": [],
+            "searchDir": [],
+            "runToEntryPoint": "main",
+            "showDevDebugOutput": "none",
+            "machine": "netduinoplus2",
+            "cpu": "cortex-m4",
+            "preLaunchTask": "CMake: build",
+        },
+    ]
+}

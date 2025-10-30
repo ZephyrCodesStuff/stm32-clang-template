@@ -34,6 +34,9 @@ message("Build type: " ${CMAKE_BUILD_TYPE})
 # Enable CMake support for ASM and C languages
 enable_language(C ASM)
 
+# Toggle options for building the project
+option(ENABLE_QEMU_MITIGATIONS "Enable QEMU-specific mitigations" OFF)
+
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME})
 
@@ -56,9 +59,10 @@ target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 # Add project symbols (macros)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
-    # Add user defined symbols
-)
+if (ENABLE_QEMU_MITIGATIONS)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE ENABLE_QEMU_MITIGATIONS=1)
+    message(STATUS "QEMU mitigations: ENABLE_QEMU_MITIGATIONS=ON")
+endif()
 
 # Remove wrong libob.a library dependency when using cpp files
 list(REMOVE_ITEM CMAKE_C_IMPLICIT_LINK_LIBRARIES ob)
